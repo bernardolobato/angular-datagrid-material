@@ -28,27 +28,24 @@ export class DataGridComponent {
 
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes['columns'].currentValue);
     if (changes['columns'].currentValue) {
       this.displayedColumns =  changes['columns'].currentValue.map(x => x.id);
     }
   }
 
-  createTable() {
-    let tableArr: Element[] = [
-    { id: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { id: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { id: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { id: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { id: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-    { id: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }
-    ];
-    this.dataSource = tableArr;
-  }
-
   addNewLine() {
     if (!this.editing) {
-      this.dataSource.unshift({ id: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', editing: true, isNew: true })
+//{ id: '', name: '', weight: '', symbol: '', editing: true, isNew: true }
+      let ret = {};
+      let emplyLine = this.columns.map(x => {
+        console.log(x)
+        ret[x.id] = '';
+        return ret
+      })[0];
+      emplyLine.editing = true;
+      emplyLine.isNew = true;
+      console.log(emplyLine);
+      this.dataSource.unshift(emplyLine);
       this.editing = true;
     }
   }
