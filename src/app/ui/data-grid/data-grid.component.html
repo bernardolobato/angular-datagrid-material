@@ -1,0 +1,59 @@
+<div class="button-container">
+    <button mat-fab color="primary" aria-label="Example icon button with a home icon" (click)="addNewLine()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<div class="mdc-data-table">
+    <table class="mdc-data-table__table" aria-label="Dessert calories">
+      <thead>
+        <tr class="mdc-data-table__header-row">
+          <th class="mdc-data-table__header-cell" role="columnheader" *ngFor="let col of columns" scope="col">{{col.value}}</th>
+        </tr>
+      </thead>
+      <tbody class="mdc-data-table__content">
+        <tr class="mdc-data-table__row" *ngFor="let row of dataSource; let i=index" [ngClass]="{'mdc-data-table__row--new': row.isNewLine, 'mdc-data-table__row--editing': row.editing}">
+          <td class="mdc-data-table__cell" *ngFor="let column of columns">
+            <div *ngIf="row.editing">
+                  <div class="input-field mdc-text" *ngIf="column.type === 'text'">
+                      <input required class="mdc-text-field" [(ngModel)]="row[column.id]">
+                      <span class="placeholder">{{column.value}}</span>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>{{column.value}}</label>
+                  </div>
+
+
+                  <div class="input-field mdc-select"  *ngIf="column.type === 'list'">
+					<select class="mdc-select-field" required [(ngModel)]="row[column.id]">
+						<option value="" disabled selected></option>
+						<option *ngFor="let option of column.options" [value]="option.id">{{option.value}}</option>
+					</select>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>{{column.value}}</label>
+                </div>
+
+                <div *ngIf="column.type === 'actions'">
+                    <div>
+                        <i class="material-icons md-18" (click)="actionButton('save', i)">check</i>&nbsp;
+                        <i class="material-icons md-18" (click)="actionButton('cancel', i)">cancel</i>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div *ngIf="!row.editing">
+                {{row[column.id]}}
+
+                <div *ngIf="column.type === 'actions'">
+                    <div>
+                        <i class="material-icons md-18" *ngFor="let item of column.list" (click)="actionButton(item.name, i)">{{item.icon}}</i>&nbsp;
+                    </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

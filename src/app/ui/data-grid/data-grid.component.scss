@@ -1,0 +1,183 @@
+@import "~@material/data-table/mdc-data-table";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.button-container {
+    padding-bottom: 1rem;
+}
+.mdc-data-table__table {
+    width: 100%;
+}
+.mdc-data-table__row--new {
+    height: 1px;
+}
+.mdc-data-table__cell {
+    transition: height 0.2s ease-in;
+}
+.mdc-data-table__row {
+    transition: height 2s ease-in;
+    &--editing {
+        .mdc-data-table__cell {
+            box-shadow: 0 10px 10px -5px #ccc;
+            height: 7rem;
+        }
+    }
+}
+
+.input-field {
+font-family:
+    'Roboto','Helvetica','Arial',sans-serif;
+    position: relative;
+    width: 350px;
+
+    label {
+    color: rgba(0,0,0, 0.26);
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: 0.2s ease all;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 350px;
+}
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+    
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #2F80ED;
+    transition: 0.2s ease all;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+}
+
+.mdc-select-field, .mdc-text-field {
+    position: relative;
+    font-family: inherit;
+    background-color: transparent;
+    width: 350px;
+    padding: 10px 10px 10px 0;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
+
+/* Remove focus */
+.mdc-select-field, .mdc-text-field {
+    outline: none;
+    border-bottom: 1px solid rgba(0,0,0, 0);
+}
+
+    /* Use custom arrow */
+.mdc-select .mdc-select-field {
+    appearance: none;
+    -webkit-appearance:none
+}
+
+.input-field:after {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+
+
+/* LABEL ======================================= */
+
+
+/* active state */
+.mdc-select-field:focus ~ label, .mdc-select-field:valid ~ label,
+.mdc-text-field:focus ~ label, .mdc-text-field:valid ~ label
+{
+    color: #2F80ED;
+    top: -20px;
+    transition: 0.2s ease all;
+    font-size: 14px;
+}
+
+/* BOTTOM BARS ================================= */
+
+
+
+
+
+/* active state */
+.mdc-select-field:focus ~ .bar:before, .mdc-select-field:focus ~ .bar:after,
+.mdc-text-field:focus ~ .bar:before, .mdc-text-field:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+
+
+
+
+@font-face {
+font-family: 'Material Icons';
+font-style: normal;
+font-weight: 400;
+src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 24px;  /* Preferred icon size */
+display: inline-block;
+line-height: 1;
+text-transform: none;
+letter-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+direction: ltr;
+
+/* Support for all WebKit browsers. */
+-webkit-font-smoothing: antialiased;
+/* Support for Safari and Chrome. */
+text-rendering: optimizeLegibility;
+
+/* Support for Firefox. */
+-moz-osx-font-smoothing: grayscale;
+
+/* Support for IE. */
+font-feature-settings: 'liga';
+}
