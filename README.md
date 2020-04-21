@@ -25,7 +25,8 @@ export class ViewsModule { }
     {{line |json}}
   </pre>
   <app-data-grid [columns]="columns" [dataSource]="datasource" (onAction)="action($event)"></app-data-grid>
-</div>```
+</div>
+```
 
 There are two mandatories parameters: columns and datasources.
 * Columns represents the columns of the datatable. This object must be in the following example:
@@ -63,7 +64,8 @@ There are two mandatories parameters: columns and datasources.
       {icon:"delete", name: "delete"},
       {icon: "info", name: "info"}]
   }
-  ];```
+  ];
+  ```
 
   * datasource represents the data that will fill the datatable. Must be in the following format:
    ```datasource=[
@@ -73,7 +75,8 @@ There are two mandatories parameters: columns and datasources.
     { id: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
     { id: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
     { id: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }
-    ];```
+    ];
+    ```
 
     ### Notes
     * The id property in column must match the name of the property um datasource. For example, in second element in columns list, we have id:name. This column will match with name property in datasource.
