@@ -76,7 +76,7 @@ There are two mandatories parameters: columns and datasources.
     { id: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
     { id: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }
     ];
-    ```
+```
 
     ### Notes
     * The id property in column must match the name of the property um datasource. For example, in second element in columns list, we have id:name. This column will match with name property in datasource.
