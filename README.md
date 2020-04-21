@@ -77,8 +77,7 @@ There are two mandatories parameters: columns and datasources.
     { id: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }
     ];
 ```
-
-    ### Notes
-    * The id property in column must match the name of the property um datasource. For example, in second element in columns list, we have id:name. This column will match with name property in datasource.
-    * The icon list in actions inside columns list must match material icons names to render properly
-    * The option ```(onAction)="action($event)"``` in use inside the component is an event that will be triggered when any actions ocours. You must implement this method and choose what will happen when the specified action is triggered
+### Notes
+* The id property in column must match the name of the property um datasource. For example, in second element in columns list, we have id:name. This column will match with name property in datasource.
+* The icon list in actions inside columns list must match material icons names to render properly
+* The option ```(onAction)="action($event)"``` in use inside the component is an event that will be triggered when any actions ocours. You must implement this method and choose what will happen when the specified action is triggered
