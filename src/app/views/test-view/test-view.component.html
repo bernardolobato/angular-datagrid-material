@@ -1,0 +1,7 @@
+<div>
+  <h1>Datagrid</h1>
+  <pre>
+    {{line |json}}
+  </pre>
+  <app-data-grid [columns]="columns" [dataSource]="datasource" (onAction)="action($event)"></app-data-grid>
+</div>

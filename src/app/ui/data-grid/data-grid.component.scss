@@ -1,6 +1,9 @@
-@import "~@material/data-table/mdc-data-table";
+@import "https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+button {
+    margin: 1rem;
+}
 .button-container {
     padding-bottom: 1rem;
 }
@@ -181,3 +184,4 @@ text-rendering: optimizeLegibility;
 /* Support for IE. */
 font-feature-settings: 'liga';
 }
+
